@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bt58syak1wtms"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_tsocn"]
+[ext_resource type="Texture2D" uid="uid://d1rxeqtvj78xt" path="res://Top_Down_Survivor/rifle/shoot/survivor-shoot_rifle_1.png" id="2_8wg7g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p7418"]
+radius = 22.0907
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_tsocn")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(14, -4)
+scale = Vector2(0.282051, 0.378641)
+texture = ExtResource("2_8wg7g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.8147e-06, 0)
+shape = SubResource("CircleShape2D_p7418")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(16, 15)
+target_position = Vector2(800, 0)
